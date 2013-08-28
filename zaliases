@@ -1,0 +1,27 @@
+# Custom zsh aliases and functions
+
+alias mirr="wget -m -p -E -k -K -np"
+alias tplay="totem --fullscreen"
+alias virsh='sudo virsh -c qemu:///system'
+alias lo="libreoffice"
+alias rot13="tr A-Za-z N-ZA-Mn-za-m"
+alias ilo="ssh -o HostKeyAlgorithms=ssh-rsa"
+
+delaysec() {
+    sleep $(($(date +%s -d "$@")-$(date +%s)))
+}
+
+namedir() {
+    if [ $# -eq 2 ] ; then
+        eval $1=$2
+    else
+        eval $1=$(pwd)
+    fi
+    : ~$1
+}
+
+slmount() {
+    for i in 1 2 ; do 
+    sudo mount -o loop,ro /vol/rsw/iso/SL-62-x86_64-2012-02-06-Everything-DVD$i.iso /mnt/sl/$i
+    done
+}
