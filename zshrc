@@ -17,4 +17,4 @@ compinit
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/local/sbin:/usr/sbin:/sbin"
 umask 002
 
-[ -f "$HOME/.zshrc.local ] && . $HOME/.zshrc.local
+[ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"
