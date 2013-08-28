@@ -1,20 +1,16 @@
 " Vim color file
-" Maintainer:	Thorsten Maerz <info@netztorte.de>
-" Last Change:	2006 Dec 07
-" grey on black
-" optimized for TFT panels
+" Maintainer:	Rob Wolfram <propdf@hamal.nl>
 
-"set background=dark
+"set background=light
 hi clear
 if exists("syntax_on")
   syntax reset
 endif
-"colorscheme default
 let g:colors_name = "hamallight"
 
-" hardcoded colors :
-" GUI Comment : #80a0ff = Light blue
+" GUI colors will be added later, based on cterm colors
 
+" Console
 highlight Normal     ctermfg=233	ctermbg=White   cterm=NONE
 highlight Search     ctermfg=NONE       ctermbg=11      cterm=NONE
 highlight Visual     ctermfg=NONE       ctermbg=249     cterm=NONE
