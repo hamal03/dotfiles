@@ -43,16 +43,12 @@ endfunction
 nnoremap <leader>bg :call ToggleBackground()<cr>
 nnoremap <F5> :call ToggleBackground()<cr>
 
-"map <F5> /)<CR>ls<CR><ESC>
-"map <F6> yyPkJWWDjddkJmaGp'a
-"map <F8> /^([0-9]\+:[0-9:-]\+)<CR>
-"map <F3> ^Wcw<CR><ESC>k:r!echo $RANDOM<CR>kJJx
-nnoremap <leader>n :set number!<cr>:set list!<cr>
-nnoremap <F2> ^Wcw<CR><Esc>k:r!echo $RANDOM<CR>kJJx
-nnoremap <F3> aGondel 1:<ESC>^Wcw<CR><Esc>k:r!echo $RANDOM<CR>kJJx
+nnoremap <leader>nl :set number!<cr>:set list!<cr>
 nnoremap <F4> /^-- <CR>0j!Grandsig1.pl<CR>
-"nnoremap <F5> lBi<span class=versno-end><ESC>Ea</span><ESC>
-"nnoremap <F7> lBi<span class=versno><ESC>Ea</span><ESC>
-nnoremap <F8> /\<\[\?[0-9][0-9]*\(-[0-9][0-9]*\)\?\]\? <CR>
 
 inoreabbrev plhdr #!/usr/bin/perluse strict;use warnings;
+
+" local stuff
+if filereadable(glob("$HOME/.vimrc.local"))
+    source $HOME/.vimrc.local
+endif
