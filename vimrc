@@ -2,7 +2,7 @@ let mapleader = ","
 execute pathogen#infect()
 filetype plugin indent on
 syntax enable
-"set background=light
+set background=light
 
 set t_Co=256
 set background=light
@@ -15,8 +15,8 @@ set modeline
 set modelines=10
 set autoindent
 set pastetoggle=<F11>
-"set number 
-"set list
+set number 
+set list
 set listchars=tab:▸\ ,eol:¬
 "let loaded_matchparen = 1
 
