@@ -46,7 +46,7 @@ nnoremap <F5> :call ToggleBackground()<cr>
 nnoremap <leader>nl :set number!<cr>:set list!<cr>
 nnoremap <F4> /^-- <CR>0j!Grandsig1.pl<CR>
 
-inoreabbrev plhdr #!/usr/bin/perluse strict;use warnings;
+inoreabbrev plhdr #!/usr/bin/perluse strict;use warnings;
 
 " local stuff
 if filereadable(glob("$HOME/.vimrc.local"))
