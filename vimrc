@@ -20,16 +20,16 @@ set list
 set listchars=tab:▸\ ,eol:¬
 "let loaded_matchparen = 1
 
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <s-tab> <c-n>
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+"function! InsertTabWrapper()
+"    let col = col('.') - 1
+"    if !col || getline('.')[col - 1] !~ '\k'
+"        return "\<tab>"
+"    else
+"        return "\<c-p>"
+"    endif
+"endfunction
+"inoremap <s-tab> <c-n>
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 function! ToggleBackground()
     if &background == 'light'
