@@ -15,7 +15,7 @@ highlight Normal     ctermfg=254        ctermbg=Black   cterm=NONE
 highlight Search     ctermfg=NONE       ctermbg=17      cterm=NONE
 highlight Visual     ctermfg=NONE       ctermbg=238     cterm=NONE
 highlight Special    ctermfg=208        ctermbg=NONE    cterm=NONE
-highlight Comment    ctermfg=20         ctermbg=NONE    cterm=NONE
+highlight Comment    ctermfg=27         ctermbg=NONE    cterm=NONE
 highlight StatusLine ctermfg=Black      ctermbg=123     cterm=NONE
 highlight Statement  ctermfg=184        ctermbg=NONE    cterm=NONE
 highlight LineNr     ctermfg=black      ctermbg=242     cterm=NONE
