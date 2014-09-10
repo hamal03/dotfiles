@@ -25,3 +25,8 @@ slmount() {
     sudo mount -o loop,ro /vol/rsw/iso/SL-62-x86_64-2012-02-06-Everything-DVD$i.iso /mnt/sl/$i
     done
 }
+
+mkrpmdirs() {
+    DESTTOP=${1:-.}
+    mkdir -p $DESTTOP/{BUILD{,ROOT},SOURCES,SPECS,{,S}RPMS}
+}

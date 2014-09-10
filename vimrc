@@ -16,6 +16,8 @@ set modelines=10
 set autoindent
 set pastetoggle=<F11>
 set number 
+set wrap
+set linebreak
 set list
 set listchars=tab:▸\ ,eol:¬
 "let loaded_matchparen = 1
