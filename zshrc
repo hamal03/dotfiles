@@ -15,6 +15,7 @@ compinit
 [ -f "$HOME/.zaliases" ] && . "$HOME/.zaliases"
 
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/local/sbin:/usr/sbin:/sbin"
+export XAUTHORITY=$HOME/.Xauthority
 umask 002
 
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"

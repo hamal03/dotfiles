@@ -6,6 +6,7 @@ alias virsh='sudo virsh -c qemu:///system'
 alias lo="libreoffice"
 alias rot13="tr A-Za-z N-ZA-Mn-za-m"
 alias ilo="ssh -o HostKeyAlgorithms=ssh-rsa"
+alias duprestore="duplicity restore --encrypt-key 0xD61A655D"
 
 delaysec() {
     sleep $(($(date +%s -d "$@")-$(date +%s)))
