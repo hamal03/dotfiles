@@ -21,13 +21,38 @@ namedir() {
     : ~$1
 }
 
-slmount() {
-    for i in 1 2 ; do 
-    sudo mount -o loop,ro /vol/rsw/iso/SL-62-x86_64-2012-02-06-Everything-DVD$i.iso /mnt/sl/$i
-    done
-}
-
 mkrpmdirs() {
     DESTTOP=${1:-.}
     mkdir -p $DESTTOP/{BUILD{,ROOT},SOURCES,SPECS,{,S}RPMS}
 }
+
+randpw() {
+    while [ $# -gt 0 ] ; do
+        if [ "$1" = "-n" ] ; then
+            COUNT=$2
+            shift; shift
+        elif [ "$1" = "-l" ] ; then
+            LENGTH=$2
+            shift; shift
+        fi
+    done
+    COUNT=${COUNT:-5}
+    LENGTH=${LENGTH:-20}
+    for i in {1..$COUNT} ; do
+        PW=$(dd if=/dev/urandom bs=$LENGTH count=1 2>/dev/null | \
+            base64 | sed 's![/+]*!!g' | cut -c -$LENGTH)
+        echo -n "$PW   "
+        OLDPW=""
+        while [ "$PW" != "$OLDPW" ] ; do
+            OLDPW=$PW
+            echo -n "${PW:0:4} "
+            PW=${PW#????}
+        done
+        echo
+    done
+    unset LENGTH
+    unset COUNT
+    unset PW
+    unset OLDPW
+}
+
