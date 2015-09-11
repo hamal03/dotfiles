@@ -34,6 +34,9 @@ randpw() {
         elif [ "$1" = "-l" ] ; then
             LENGTH=$2
             shift; shift
+        else
+            echo "Usage: $0 [-l <length>] [-c <count>]"
+            return 1
         fi
     done
     COUNT=${COUNT:-5}
