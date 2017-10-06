@@ -7,6 +7,7 @@ alias lo="libreoffice"
 alias rot13="tr A-Za-z N-ZA-Mn-za-m"
 alias ilo="ssh -o HostKeyAlgorithms=ssh-rsa"
 alias duprestore="duplicity restore --encrypt-key 0xD61A655D"
+alias ppjson="python -m json.tool"
 
 delaysec() {
     sleep $(($(date +%s -d "$@")-$(date +%s)))
