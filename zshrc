@@ -19,3 +19,12 @@ export XAUTHORITY=$HOME/.Xauthority
 umask 002
 
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"
+
+# set var NOSIMPLEGIT to disable the simple git prompt
+
+if [ -z "$NOSIMPLEGIT" ] ; then
+    __simplegit() { : }
+    setopt PROMPT_SUBST
+    [ -f "$HOME/.simplegit.zsh" ] && . "$HOME/.simplegit.zsh"
+    export PROMPT='%n@%m:%~$(__simplegit)%# '
+fi
