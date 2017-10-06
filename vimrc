@@ -14,7 +14,7 @@ set smarttab
 set modeline
 set modelines=10
 set autoindent
-set pastetoggle=<F11>
+set pastetoggle=<F12>
 set number 
 set wrap
 set linebreak
