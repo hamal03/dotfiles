@@ -11,9 +11,9 @@
 # Flags:
 # .    nothing to commit
 # X    there are conflicts
-# +    files are staged
+# +    files or deletions are staged
 # *    files are modified
-# ?    untracked files are present
+# ?    present files or deletions are untracked
 
 # Usage:
 # ZSH: include the following in your .zshrc file (the ellipses denote
@@ -56,10 +56,10 @@ __simplegit() {
         [ -n "$BASH" ] && readarray -t __mystatlines <<< "$__mystat"
         for line in ${__mystatlines[@]} ; do
             [ "${line:0:1}" = "U" ] && __sgbrk="${__RED}X${__RESET}"
-            [ "${line:0:1}" = "A" -o "${line:0:1}" = "M" ] && \
+            [ "${line:0:1}" = "A" -o "${line:0:1}" = "M" -o "${line:0:1}" = "D" ] && \
                 __sgadd="${__CYAN}+${__RESET}"
             [ "${line:1:1}" = "M" ] && __sgmod="${__YELLOW}*${__RESET}"
-            [ "${line:1:1}" = "?" ] && __sgunk="${__MGTA}?${__RESET}"
+            [ "${line:1:1}" = "?" -o "${line:1:1}" = "D" ] && __sgunk="${__MGTA}?${__RESET}"
         done
         if [ -n "${__sgbrk}" ] ; then
             __mybr="${__RED}${__mybr}${__RESET}"
