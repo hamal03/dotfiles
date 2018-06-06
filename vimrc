@@ -47,6 +47,7 @@ nnoremap <F5> :call ToggleBackground()<cr>
 
 nnoremap <leader>nl :set number!<cr>:set list!<cr>:set linebreak!<cr>
 nnoremap <F4> /^-- <CR>0j!Grandsig1.pl<CR>
+nnoremap <F8> :set hls!<bar>set hls?<CR>
 
 inoreabbrev plhdr #!/usr/bin/perluse strict;use warnings;
 
