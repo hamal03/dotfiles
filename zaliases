@@ -60,3 +60,7 @@ randpw() {
     unset OLDPW
 }
 
+secuntil () {
+    echo $(($(date +%s -d "$@")-$(date +%s)))
+}
+

@@ -42,12 +42,15 @@ function! ToggleBackground()
         colorscheme hamallight
     endif
 endfunction
+
 nnoremap <leader>bg :call ToggleBackground()<cr>
 nnoremap <F5> :call ToggleBackground()<cr>
 
-nnoremap <leader>nl :set number!<cr>:set list!<cr>:set linebreak!<cr>
 nnoremap <F4> /^-- <CR>0j!Grandsig1.pl<CR>
 nnoremap <F8> :set hls!<bar>set hls?<CR>
+
+nnoremap <F9> :set number!<bar>set list!<bar>set linebreak!<cr>
+nnoremap <leader>nl :set number!<bar>set list!<bar>set linebreak!<cr>
 
 inoreabbrev plhdr #!/usr/bin/perluse strict;use warnings;
 
