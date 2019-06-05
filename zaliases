@@ -60,6 +60,14 @@ randpw() {
     unset OLDPW
 }
 
+# show git diff with the common merge base
+diverge() {
+    [ "$1" = "--help" ] && \
+        echo "Usage: diverge [ branch [ git diff options ] ]" >&2 && return
+    BRANCH=${1:-master} ; shift
+    git diff $@ $(git merge-base $BRANCH HEAD)
+}
+
 secuntil () {
     echo $(($(date +%s -d "$@")-$(date +%s)))
 }
