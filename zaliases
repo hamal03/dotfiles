@@ -8,6 +8,7 @@ alias rot13="tr A-Za-z N-ZA-Mn-za-m"
 alias ilo="ssh -o HostKeyAlgorithms=ssh-rsa"
 alias duprestore="duplicity restore --encrypt-key 0xD61A655D"
 alias ppjson="python -m json.tool"
+alias unansi='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 
 delaysec() {
     sleep $(($(date +%s -d "$@")-$(date +%s)))
