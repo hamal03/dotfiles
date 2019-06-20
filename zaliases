@@ -44,8 +44,8 @@ randpw() {
     COUNT=${COUNT:-5}
     LENGTH=${LENGTH:-20}
     for i in {1..$COUNT} ; do
-        PW=$(dd if=/dev/urandom bs=$LENGTH count=1 2>/dev/null | \
-            base64 | sed 's![/+]*!!g' | cut -c -$LENGTH)
+        PW=$(dd if=/dev/urandom bs=$(($LENGTH * 2)) count=1 2>/dev/null | \
+            base64 | sed 's![/+I1l0O]*!!g' | cut -c -$LENGTH)
         echo -n "$PW   "
         OLDPW=""
         while [ "$PW" != "$OLDPW" ] ; do
