@@ -45,7 +45,7 @@ randpw() {
     LENGTH=${LENGTH:-20}
     for i in {1..$COUNT} ; do
         PW=$(dd if=/dev/urandom bs=$(($LENGTH * 2)) count=1 2>/dev/null | \
-            base64 | sed 's![/+I1l0O]*!!g' | cut -c -$LENGTH)
+            base64 -w 0 | sed 's![/+I1l0O]*!!g' | cut -c -$LENGTH)
         echo -n "$PW   "
         OLDPW=""
         while [ "$PW" != "$OLDPW" ] ; do
@@ -65,8 +65,9 @@ randpw() {
 diverge() {
     [ "$1" = "--help" ] && \
         echo "Usage: diverge [ branch [ git diff options ] ]" >&2 && return
-    BRANCH=${1:-master} ; shift
-    git diff $@ $(git merge-base $BRANCH HEAD)
+    BRANCH=${1:-master}
+    [ $# -gt 0 ] && shift
+    git diff $(git merge-base $BRANCH HEAD) $@
 }
 
 secuntil () {
