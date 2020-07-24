@@ -1,14 +1,13 @@
 # Custom zsh aliases and functions
 
 alias mirr="wget -m -p -E -k -K -np"
-alias tplay="totem --fullscreen"
 alias virsh='sudo virsh -c qemu:///system'
 alias lo="libreoffice"
 alias rot13="tr A-Za-z N-ZA-Mn-za-m"
 alias ilo="ssh -o HostKeyAlgorithms=ssh-rsa"
-alias duprestore="duplicity restore --encrypt-key 0xD61A655D"
 alias ppjson="python -m json.tool"
 alias unansi='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
+alias gittouch='git commit --amend --no-edit --date=$(date +%s)'
 
 delaysec() {
     sleep $(($(date +%s -d "$@")-$(date +%s)))
