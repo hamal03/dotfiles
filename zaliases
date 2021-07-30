@@ -8,6 +8,7 @@ alias ilo="ssh -o HostKeyAlgorithms=ssh-rsa"
 alias ppjson="python -m json.tool"
 alias unansi='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 alias gittouch='git commit --amend --no-edit --date=$(date +%s)'
+alias ipsort='sort -t. -n -k1,1 -k2,2 -k3,3 -k4,4'
 
 delaysec() {
     sleep $(($(date +%s -d "$@")-$(date +%s)))
