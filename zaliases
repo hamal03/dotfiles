@@ -9,6 +9,16 @@ alias ppjson="python -m json.tool"
 alias unansi='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"'
 alias gittouch='git commit --amend --no-edit --date=$(date +%s)'
 alias ipsort='sort -t. -n -k1,1 -k2,2 -k3,3 -k4,4'
+alias tnew='tmux new -s'
+alias tattach='tmux attach-session -t'
+alias tlist='tmux list-sessions'
+alias dg="dig +short"
+
+# Tmux pane rename
+function renamePane () {
+  echo -n "Enter Pane Name: "; read pane_name;
+  printf "\033]2;%s\033\\" "${pane_name}";
+};
 
 delaysec() {
     sleep $(($(date +%s -d "$@")-$(date +%s)))

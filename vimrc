@@ -19,7 +19,7 @@ set number
 set wrap
 set linebreak
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:>\ ,eol:¬
 "let loaded_matchparen = 1
 
 "function! InsertTabWrapper()
